@@ -2,6 +2,6 @@ FROM public.ecr.aws/lambda/python:3.8
 
 COPY requirements.txt ./
 RUN pip3 install -r requirements.txt
-COPY lambda.py ./
+COPY lambda_function.py ./
 
-CMD ["lambda.lambda_handler"]
+CMD ["lambda_function.lambda_handler"]
