@@ -1,0 +1,164 @@
+{
+	"url": {
+		"aquila": {
+			"rrp_get":"-user-api.common.cloud.hpe.com/authorization/ui/v1/resource_restrictions",
+			"rrp_create": "-user-api.common.cloud.hpe.com/authorization/ui/v1/customers/applications/",
+			"rrp_delete": "-user-api.common.cloud.hpe.com/authorization/ui/v1/resource_restriction/delete",
+			"device_assign": "-user-api.common.cloud.hpe.com/ui-doorway/ui/v1/devices/application-instance",
+			"device_unassign": "-user-api.common.cloud.hpe.com/ui-doorway/ui/v1/devices/application-instance",
+			"device_get": "-user-api.common.cloud.hpe.com/ui-doorway/ui/v1/devices",
+			"device_unassign_get": "/ui-doorway/ui/v1/devices",
+			"app_role_create": "-user-api.common.cloud.hpe.com/authorization/ui/v1/customers/",
+			"app_role_delete": "-user-api.common.cloud.hpe.com/authorization/ui/v1/customers/",
+			"app_role_assign": "-user-api.common.cloud.hpe.com/authorization/ui/v2/customers/users/",
+			"app_role_get":"-user-api.common.cloud.hpe.com/ui-doorway/ui/v1/um/customers/",
+			"app_role_assignment_get": "-user-api.common.cloud.hpe.com/authorization/ui/v2/customers/",
+			"app_role_unassign":"-user-api.common.cloud.hpe.com/authorization/ui/v2/customers/users/",
+			"role_assign": "-user-api.common.cloud.hpe.com/authorization/ui/v2/customers/users/",
+			"role_unassign":"-user-api.common.cloud.hpe.com/authorization/ui/v2/customers/users/",
+			"role_get":"-user-api.common.cloud.hpe.com/authorization/ui/v2/customers/",
+			"license_assign": "-user-api.common.cloud.hpe.com/ui-doorway/ui/v1/license/devices",
+			"license_unassign": "-user-api.common.cloud.hpe.com/ui-doorway/ui/v1/license/devices"
+		},
+
+
+		"gemini": {
+			"app_role_assignment_get" : "-default-user-api.ccs.arubathena.com/authorization/ui/v2/customers/",
+			"rrp_get": "-default-user-api.ccs.arubathena.com/authorization/ui/v1/resource_restrictions",
+			"rrp_create": "-default-user-api.common.cloud.hpe.com/authorization/ui/v1/customers/applications/",
+			"rrp_delete": "-default-user-api.common.cloud.hpe.com/authorization/ui/v1/resource_restriction/delete",
+			"app_role_create": "-default-user-api.ccs.arubathena.com/authorization/ui/v1/customers/",
+			"app_role_delete": "-default-user-api.ccs.arubathena.com/authorization/ui/v1/customers/",
+			"app_role_assign": "-default-user-api.ccs.arubathena.com/authorization/ui/v2/customers/users/",
+			"app_role_get": "-default-user-api.ccs.arubathena.com/ui-doorway/ui/v1/um/customers/",
+			"app_role_unassign":"-default-user-api.ccs.arubathena.com/authorization/ui/v2/customers/users/",
+			"device_assign": "-default-user-api.ccs.arubathena.com/ui-doorway/ui/v1/devices/application-instance",
+			"device_unassign": "-default-user-api.ccs.arubathena.com/ui-doorway/ui/v1/devices/application-instance",
+			"device_get": "-default-user-api.ccs.arubathena.com/ui-doorway/ui/v1/devices",
+			"device_unassign_get": "/ui-doorway/ui/v1/devices",
+			"role_assign": "-default-user-api.ccs.arubathena.com/authorization/ui/v2/customers/users/",
+			"role_unassign": "-default-user-api.ccs.arubathena.com/authorization/ui/v2/customers/users/",
+			"role_get": "-default-user-api.ccs.arubathena.com/authorization/ui/v2/customers/",
+			"license_assign": "-default-user-api.ccs.arubathena.com/ui-doorway/ui/v1/license/devices",
+			"license_unassign": "-default-user-api.ccs.arubathena.com/ui-doorway/ui/v1/license/devices"
+		}
+
+	},
+
+
+	"clusters": {
+		"aquila": {
+			"app_role_assignment_get": {"name":"Aquila_Canary_Role"},
+			"rrp_get": {"name":"AllScopes"},
+			"rrp_delete":{"ids":["17aef0c9-9548-46fb-97c2-787cbc7e3749"]},
+			"rrp_create": {"name":"aquila_canary_rrp","description":"This is an RRP to be used for canary monitoring. PLEASE DO NOT DELETE","application_name":"Aruba Central","scope_resource_instances":[{"name":"allgroups","slug":"/aruba-central/group/*","description":"allgroups","matcher":"/aruba-central/group/*","scope_type_name":"Group Scope","scope_type_slug":"/aruba-central/group","type":"/aruba-central/group","application_cid":"bf4d5c840b9f11edb2bece3fe53b83a3","application_instance_id":"55c11c0c-01e9-49e1-a548-24055fdd5562"}]},
+			"app_role_assign":{"add":[{"role":{"slug":"9897ba4da03f42ec9891a73d75fa4d05","application_id":"980eea3c-b063-451e-8a45-ebcaa54fd561"}}]},
+			"app_role_unassign": {"delete":[{"slug":"9897ba4da03f42ec9891a73d75fa4d05","application_id":"980eea3c-b063-451e-8a45-ebcaa54fd561"}]},
+			"app_role_delete": {},
+			"app_role_create" : {"name":"Aquila_Canary_Role","description":"This is a role to be used for CCS Canary Monitoring in Production Cluster","resource_policies":[{"effect":"ALLOW","permissions":[{"slug":"data-services.blueprint.create"}],"resource":{"matcher":"/data-services/blueprint"}}]},
+		    "app_role_get" : {"name": "Aquila_Canary_Role" , "application_id" : "683da368-66cb-4ee7-90a9-ec1964768092"},
+		    "role_assign": {	"overwrite": [{
+			"role": {
+				"slug": "ccs.account-admin",
+				"application_id": "00000000-0000-0000-0000-000000000000"
+			},
+			"resource_restriction_policies": []
+		},
+		{
+			"role": {
+				"slug": "7140524b5afc475e82f4feaa300a87cc",
+				"application_id": "683da368-66cb-4ee7-90a9-ec1964768092"
+			},
+			"resource_restriction_policies": ["48fceda8-8871-440a-9017-d48945f0689e"]
+		}
+	]},
+		    "role_unassign": {"delete": [{
+		"slug": "7140524b5afc475e82f4feaa300a87cc",
+		"application_id": "683da368-66cb-4ee7-90a9-ec1964768092"
+	}]},
+		    "role_get": {"dummy" : "dummy" },
+			"license_assign": [{
+				"serial_number": "2MDKESK471",
+				"part_number": "JW242AR",
+				"device_type": "IAP",
+				"subscription_key": "E6623A47D522F497CA"
+			}],
+			"license_unassign": [{
+				"serial_number": "2MDKESK471",
+				"device_type": "IAP",
+				"part_number": "JW242AR"
+			}],
+			"device_unassign": {
+				"devices": [{
+					"serial_number": "2MDKESK471",
+					"device_type": "IAP",
+					"part_number": "JW242AR"
+				}]
+			},
+			"device_get": {
+				"serial_number": "2MDKESK471"
+			},
+			"device_assign": {
+				"assign_list": [{
+					"devices": [{
+						"serial_number": "2MDKESK471",
+						"device_type": "IAP",
+						"part_number": "JW242AR"
+					}],
+					"application_id": "683da368-66cb-4ee7-90a9-ec1964768092",
+					"application_instance_id": "55c11c0c-01e9-49e1-a548-24055fdd5562"
+				}]
+			}
+
+
+		},
+		"gemini": {
+			"app_role_assignment_get": {"name":"Gemini_Canary_Role"},
+			"rrp_get": {"name":"AllScopes"},
+			"rrp_delete": {"ids":["17aef0c9-9548-46fb-97c2-787cbc7e3749"]},
+			"rrp_create": {"name":"gemini_canary_rrp","description":"This is an RRP to be used for canary monitoring. PLEASE DO NOT DELETE","application_name":"Sample Compute storage APP1","scope_resource_instances":[{"name":"All Sample App Storage systems","slug":"/sample-services/storage-system/*","description":null,"matcher":"/sample-services/storage-system/*","scope_type_name":"Sample Services Storage System Scope","scope_type_slug":"/sample-services/storage-system","type":"/sample-services/storage-system","application_cid":"c86b1d5e11f011eda784fecf2eb19735","application_instance_id":"f7a142fb-71a0-47c7-9cb7-b59ab08d1ba7"}]},
+			"app_role_assign":{"add":[{"role":{"slug":"9897ba4da03f42ec9891a73d75fa4d05","application_id":"980eea3c-b063-451e-8a45-ebcaa54fd561","resource_restriction_policies":["42baa03b-ee10-4aed-865f-7fb515bf5edf"]}}]},
+			"app_role_unassign": {"delete":[{"slug":"9897ba4da03f42ec9891a73d75fa4d05","application_id":"980eea3c-b063-451e-8a45-ebcaa54fd561"}]},
+			"app_role_delete": {},
+			"app_role_create" : {"name":"Gemini_Canary_Role","description":"This is a role to be used for CCS Canary Monitoring in Gemini Cluster","resource_policies":[{"effect":"ALLOW","permissions":[{"slug":"data-services.blueprint.create"}],"resource":{"matcher":"/data-services/blueprint"}}]},
+			"app_role_get": {"name": "Gemini_Canary_Role","application_id" : "07a6aa3b-5202-4d95-bfdb-e23217edc62b"},
+		    "role_assign": {"overwrite":[{"role":{"slug":"ccs.account-admin","application_id":"00000000-0000-0000-0000-000000000000"}}]},
+		    "role_unassign": {"delete":[{"slug":"ccs.account-admin","application_id":"00000000-0000-0000-0000-000000000000"}]},
+		    "role_get": {"dummy" : "dummy" },
+			"license_assign": [{
+				"serial_number": "STIAP1D1K9",
+				"part_number": "JW242AR",
+				"device_type": "IAP",
+				"subscription_key": "E2F1BBD39D02B46B98"
+			}],
+			"license_unassign": [{
+				"serial_number": "STIAP1D1K9",
+				"device_type": "IAP",
+				"part_number": "JW242AR"
+			}],
+			"device_unassign": {
+				"devices": [{
+					"serial_number": "STIAP1D1K9",
+					"device_type": "IAP",
+					"part_number": "JW242AR"
+				}]
+			},
+			"device_get": {
+				"serial_number": "STIAP1D1K9"
+			},
+			"device_assign": {
+				"assign_list": [{
+					"devices": [{
+						"serial_number": "STIAP1D1K9",
+						"device_type": "IAP",
+						"part_number": "JW242AR"
+					}],
+					"application_id": "07a6aa3b-5202-4d95-bfdb-e23217edc62b",
+					"application_instance_id": "f7a142fb-71a0-47c7-9cb7-b59ab08d1ba7"
+				}]
+			}
+
+		}
+
+	}
+}
